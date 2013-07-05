@@ -22,7 +22,7 @@
 
 + (void)fetchDribbbleData
 {
-    FMSFetchDribbbleData *local = [[FMSFetchDribbbleData alloc]init];
+    FMSFetchDribbbleData *local = [[self alloc]init];
     [local fetchInitalDataFromDribbble];
     
 }
