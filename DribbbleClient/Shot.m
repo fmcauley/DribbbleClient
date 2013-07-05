@@ -7,24 +7,25 @@
 //
 
 #import "Shot.h"
+#import "Player.h"
 
 
 @implementation Shot
 
-@dynamic id;
-@dynamic title;
-@dynamic height;
-@dynamic width;
-@dynamic likeCount;
 @dynamic commentsCount;
-@dynamic reboundsCount;
-@dynamic url;
-@dynamic shortUrl;
-@dynamic viewCount;
-@dynamic reboundSourceId;
-@dynamic imageUrl;
-@dynamic imageTeaseUrl;
 @dynamic createdAt;
+@dynamic height;
+@dynamic shotId;
+@dynamic imageTeaseUrl;
+@dynamic imageUrl;
+@dynamic likeCount;
+@dynamic reboundsCount;
+@dynamic reboundSourceId;
+@dynamic shortUrl;
+@dynamic title;
+@dynamic url;
+@dynamic viewCount;
+@dynamic width;
 @dynamic player;
 
 @end

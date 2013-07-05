@@ -12,26 +12,26 @@
 
 @implementation Player
 
-@dynamic id;
-@dynamic name;
-@dynamic location;
-@dynamic followersCount;
-@dynamic drafteesCount;
-@dynamic likesCount;
-@dynamic likesReceivedCount;
+@dynamic avatarUrl;
 @dynamic commentsCount;
 @dynamic commentsReceivedCount;
+@dynamic createdAt;
+@dynamic draftedByPlayerId;
+@dynamic drafteesCount;
+@dynamic followersCount;
+@dynamic followingCount;
+@dynamic playerId;
+@dynamic likesCount;
+@dynamic likesReceivedCount;
+@dynamic location;
+@dynamic name;
 @dynamic reboundsCount;
 @dynamic reboundsReceivedCount;
-@dynamic url;
-@dynamic avatarUrl;
-@dynamic userName;
-@dynamic twitterScreenName;
-@dynamic websiteUrl;
-@dynamic draftedByPlayerId;
 @dynamic shotsCount;
-@dynamic followingCount;
-@dynamic createdAt;
+@dynamic twitterScreenName;
+@dynamic url;
+@dynamic userName;
+@dynamic websiteUrl;
 @dynamic shot;
 
 @end
