@@ -10,4 +10,6 @@
 
 @interface FMSDribbbleImageCell : UICollectionViewCell
 
+@property(nonatomic, strong) IBOutlet UIImageView *dribbbleImage;
+
 @end
