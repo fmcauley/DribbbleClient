@@ -7,7 +7,7 @@
 //
 
 #define kDribbbleBGQueue dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
-#define kDribbbleURLEveryoneURL [NSURL URLWithString:@"http://api.dribbble.com/shots/everyone"]
+#define kDribbbleURLEveryoneURL [NSURL URLWithString:@"http://api.dribbble.com/shots/everyone?per_page=30"]
 
 #import "FMSFetchDribbbleData.h"
 #import "FMSAppDelegate.h"
