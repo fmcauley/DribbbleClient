@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F042E2831787516000EC02D7 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = F042E2821787516000EC02D7 /* Player.m */; };
+		F042E2841787516000EC02D7 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = F042E2821787516000EC02D7 /* Player.m */; };
+		F042E2871787516D00EC02D7 /* Shot.m in Sources */ = {isa = PBXBuildFile; fileRef = F042E2861787516D00EC02D7 /* Shot.m */; };
+		F042E2881787516D00EC02D7 /* Shot.m in Sources */ = {isa = PBXBuildFile; fileRef = F042E2861787516D00EC02D7 /* Shot.m */; };
 		F08FE20D178706C900B6C555 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F08FE20C178706C900B6C555 /* UIKit.framework */; };
 		F08FE20F178706C900B6C555 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F08FE20E178706C900B6C555 /* Foundation.framework */; };
 		F08FE211178706C900B6C555 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F08FE210178706C900B6C555 /* CoreGraphics.framework */; };
@@ -44,6 +48,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F042E2811787516000EC02D7 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Player.h; path = ../Player.h; sourceTree = "<group>"; };
+		F042E2821787516000EC02D7 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Player.m; path = ../Player.m; sourceTree = "<group>"; };
+		F042E2851787516D00EC02D7 /* Shot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shot.h; sourceTree = "<group>"; };
+		F042E2861787516D00EC02D7 /* Shot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Shot.m; sourceTree = "<group>"; };
 		F08FE209178706C900B6C555 /* DribbbleClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DribbbleClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F08FE20C178706C900B6C555 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F08FE20E178706C900B6C555 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -103,6 +111,7 @@
 		F08FE200178706C900B6C555 = {
 			isa = PBXGroup;
 			children = (
+				F08FE25D178723FA00B6C555 /* ModelData */,
 				F08FE214178706C900B6C555 /* DribbbleClient */,
 				F08FE236178706C900B6C555 /* DribbbleClientTests */,
 				F08FE20B178706C900B6C555 /* Frameworks */,
@@ -143,7 +152,6 @@
 				F08FE251178713CE00B6C555 /* FMSDribbbleImageCell.h */,
 				F08FE252178713CE00B6C555 /* FMSDribbbleImageCell.m */,
 				F08FE2471787074900B6C555 /* DribbbleClient.storyboard */,
-				F08FE226178706C900B6C555 /* DribbbleClient.xcdatamodeld */,
 				F08FE215178706C900B6C555 /* Supporting Files */,
 			);
 			path = DribbbleClient;
@@ -180,6 +188,19 @@
 				F08FE239178706C900B6C555 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F08FE25D178723FA00B6C555 /* ModelData */ = {
+			isa = PBXGroup;
+			children = (
+				F042E2811787516000EC02D7 /* Player.h */,
+				F042E2821787516000EC02D7 /* Player.m */,
+				F08FE226178706C900B6C555 /* DribbbleClient.xcdatamodeld */,
+				F042E2851787516D00EC02D7 /* Shot.h */,
+				F042E2861787516D00EC02D7 /* Shot.m */,
+			);
+			name = ModelData;
+			path = DribbbleClient;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -299,6 +320,8 @@
 				F08FE24B1787098600B6C555 /* FMSDribbbleCollectionViewViewController.m in Sources */,
 				F08FE24F17870DBC00B6C555 /* FMSFetchDribbbleData.m in Sources */,
 				F08FE253178713CE00B6C555 /* FMSDribbbleImageCell.m in Sources */,
+				F042E2831787516000EC02D7 /* Player.m in Sources */,
+				F042E2871787516D00EC02D7 /* Shot.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,6 +333,8 @@
 				F08FE24C1787098600B6C555 /* FMSDribbbleCollectionViewViewController.m in Sources */,
 				F08FE25017870DBC00B6C555 /* FMSFetchDribbbleData.m in Sources */,
 				F08FE254178713CE00B6C555 /* FMSDribbbleImageCell.m in Sources */,
+				F042E2841787516000EC02D7 /* Player.m in Sources */,
+				F042E2881787516D00EC02D7 /* Shot.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -474,6 +499,7 @@
 				F08FE243178706C900B6C555 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F08FE244178706C900B6C555 /* Build configuration list for PBXNativeTarget "DribbbleClientTests" */ = {
 			isa = XCConfigurationList;
@@ -482,6 +508,7 @@
 				F08FE246178706C900B6C555 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

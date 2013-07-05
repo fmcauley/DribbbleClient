@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2061" systemVersion="12E55" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="Player" syncable="YES">
+    <entity name="Player" representedClassName="Player" syncable="YES">
         <attribute name="avatarUrl" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="commentsCount" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="commentsReceivedCount" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <attribute name="createdAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="createdAt" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="draftedByPlayerId" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="drafteesCount" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="followersCount" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="followingCount" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="likesCount" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="likesReceivedCount" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="playerId" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="reboundsCount" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="reboundsReceivedCount" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="shotsCount" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
@@ -23,17 +23,17 @@
         <attribute name="websiteUrl" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="shot" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Shot" inverseName="player" inverseEntity="Shot" syncable="YES"/>
     </entity>
-    <entity name="Shot" syncable="YES">
+    <entity name="Shot" representedClassName="Shot" syncable="YES">
         <attribute name="commentsCount" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <attribute name="createdAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="createdAt" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="height" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="imageTeaseUrl" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="imageUrl" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="likeCount" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="reboundsCount" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <attribute name="reboundSourceId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="reboundSourceId" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="shortUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="shotId" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="viewCount" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
@@ -41,7 +41,7 @@
         <relationship name="player" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Player" inverseName="shot" inverseEntity="Player" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Shot" positionX="-6021" positionY="-1818" width="128" height="268"/>
         <element name="Player" positionX="-5724" positionY="-1908" width="128" height="358"/>
+        <element name="Shot" positionX="-6021" positionY="-1818" width="128" height="268"/>
     </elements>
 </model>
