@@ -16,3 +16,5 @@ profile
 *.moved-aside
 DerivedData
 .idea/
+
+/DribbbleClient.xcodeproj/project.xcworkspace/xcuserdata/frankmcauley.xcuserdatad/UserInterfaceState.xcuserstate
