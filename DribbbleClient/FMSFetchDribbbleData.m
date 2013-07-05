@@ -61,6 +61,19 @@
         Shot *newShot  = [[Shot alloc]initWithEntity:shotEntity
                       insertIntoManagedObjectContext:appDelegate.managedObjectContext];
         
+        /** Check if objects exists */
+        NSError *error;
+        NSFetchRequest *checkForDuplacate = [[NSFetchRequest alloc]init];
+        checkForDuplacate.entity = shotEntity;
+        checkForDuplacate.fetchLimit = 1;
+        checkForDuplacate.predicate = [NSPredicate predicateWithFormat:@"shotId == %@", [shotDic[@"id"] stringValue]];
+        Shot *shotsInDataBase = [[appDelegate.managedObjectContext executeFetchRequest:checkForDuplacate error:&error]lastObject];
+        
+       if (shotsInDataBase)
+       {
+           NSLog(@"There are there already");
+       }
+       else { // put new data into the database
         newShot.shotId = [shotDic[@"id"] stringValue];
         newShot.title = shotDic[@"title"];
         newShot.height = shotDic[@"height"];
@@ -75,7 +88,6 @@
         newShot.imageUrl = shotDic[@"image_url"];
         newShot.imageTeaseUrl = shotDic[@"image_teaser_url"];
         newShot.createdAt = shotDic[@"created_at"];
-        
         
         // Player Data
         NSEntityDescription *playerEntity = [NSEntityDescription entityForName:@"Player"
@@ -99,15 +111,14 @@
         newShot.player.userName = [self validateStringDataFromJSON:shotDic[@"player"][@"user_name"]];
         newShot.player.twitterScreenName = [self validateStringDataFromJSON:shotDic[@"player"][@"twitter_screen_name"]];
         newShot.player.websiteUrl = [self validateStringDataFromJSON:shotDic[@"player"][@"website_url"]];
-        newShot.player.draftedByPlayerId = [shotDic[@"player"][@"drafted_by_player_id"]stringValue];
+        newShot.player.draftedByPlayerId = [self validateNumberDataFromJSON:shotDic[@"player"][@"drafted_by_player_id"]];
         newShot.player.shotsCount = shotDic[@"player"][@"shots_count"];
         newShot.player.followingCount = shotDic[@"player"][@"following_count"];
         newShot.player.createdAt = shotDic[@"player"][@"created_at"];
         
-        // TODO: check for existing data
-        
+        [appDelegate saveContext];
+       }
     }
-    [appDelegate saveContext];
 }
 
 - (NSString*)validateStringDataFromJSON:(NSString*)jsonString
