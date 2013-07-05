@@ -44,8 +44,6 @@
 {
     FMSAppDelegate *appDelegate=(FMSAppDelegate *) [[UIApplication sharedApplication] delegate];
     
-    
-    
     NSError* error;
     NSDictionary* json = [NSJSONSerialization
                           JSONObjectWithData:responseData
@@ -106,13 +104,10 @@
         newShot.player.followingCount = shotDic[@"player"][@"following_count"];
         newShot.player.createdAt = shotDic[@"player"][@"created_at"];
         
-        // TODO: find a better start for saving the context
         // TODO: check for existing data
         
-        [appDelegate saveContext];
-        
     }
-    
+    [appDelegate saveContext];
 }
 
 - (NSString*)validateStringDataFromJSON:(NSString*)jsonString
