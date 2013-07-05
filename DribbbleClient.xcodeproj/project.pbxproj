@@ -24,6 +24,7 @@
 		F08FE233178706C900B6C555 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F08FE212178706C900B6C555 /* CoreData.framework */; };
 		F08FE23B178706C900B6C555 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F08FE239178706C900B6C555 /* InfoPlist.strings */; };
 		F08FE23E178706C900B6C555 /* DribbbleClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F08FE23D178706C900B6C555 /* DribbbleClientTests.m */; };
+		F08FE2481787074900B6C555 /* DribbleClient.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F08FE2471787074900B6C555 /* DribbleClient.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		F08FE23A178706C900B6C555 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F08FE23C178706C900B6C555 /* DribbbleClientTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DribbbleClientTests.h; sourceTree = "<group>"; };
 		F08FE23D178706C900B6C555 /* DribbbleClientTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DribbbleClientTests.m; sourceTree = "<group>"; };
+		F08FE2471787074900B6C555 /* DribbleClient.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DribbleClient.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 			children = (
 				F08FE21D178706C900B6C555 /* FMSAppDelegate.h */,
 				F08FE21E178706C900B6C555 /* FMSAppDelegate.m */,
+				F08FE2471787074900B6C555 /* DribbleClient.storyboard */,
 				F08FE226178706C900B6C555 /* DribbbleClient.xcdatamodeld */,
 				F08FE215178706C900B6C555 /* Supporting Files */,
 			);
@@ -237,6 +240,7 @@
 				F08FE221178706C900B6C555 /* Default.png in Resources */,
 				F08FE223178706C900B6C555 /* Default@2x.png in Resources */,
 				F08FE225178706C900B6C555 /* Default-568h@2x.png in Resources */,
+				F08FE2481787074900B6C555 /* DribbleClient.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
