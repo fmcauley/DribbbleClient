@@ -27,6 +27,8 @@
 		F08FE2481787074900B6C555 /* DribbbleClient.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F08FE2471787074900B6C555 /* DribbbleClient.storyboard */; };
 		F08FE24B1787098600B6C555 /* FMSDribbbleCollectionViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F08FE24A1787098600B6C555 /* FMSDribbbleCollectionViewViewController.m */; };
 		F08FE24C1787098600B6C555 /* FMSDribbbleCollectionViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F08FE24A1787098600B6C555 /* FMSDribbbleCollectionViewViewController.m */; };
+		F08FE24F17870DBC00B6C555 /* FMSFetchDribbbleData.m in Sources */ = {isa = PBXBuildFile; fileRef = F08FE24E17870DBC00B6C555 /* FMSFetchDribbbleData.m */; };
+		F08FE25017870DBC00B6C555 /* FMSFetchDribbbleData.m in Sources */ = {isa = PBXBuildFile; fileRef = F08FE24E17870DBC00B6C555 /* FMSFetchDribbbleData.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +66,8 @@
 		F08FE2471787074900B6C555 /* DribbbleClient.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DribbbleClient.storyboard; sourceTree = "<group>"; };
 		F08FE2491787098600B6C555 /* FMSDribbbleCollectionViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMSDribbbleCollectionViewViewController.h; sourceTree = "<group>"; };
 		F08FE24A1787098600B6C555 /* FMSDribbbleCollectionViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMSDribbbleCollectionViewViewController.m; sourceTree = "<group>"; };
+		F08FE24D17870DBC00B6C555 /* FMSFetchDribbbleData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMSFetchDribbbleData.h; sourceTree = "<group>"; };
+		F08FE24E17870DBC00B6C555 /* FMSFetchDribbbleData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMSFetchDribbbleData.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +134,8 @@
 				F08FE21E178706C900B6C555 /* FMSAppDelegate.m */,
 				F08FE2491787098600B6C555 /* FMSDribbbleCollectionViewViewController.h */,
 				F08FE24A1787098600B6C555 /* FMSDribbbleCollectionViewViewController.m */,
+				F08FE24D17870DBC00B6C555 /* FMSFetchDribbbleData.h */,
+				F08FE24E17870DBC00B6C555 /* FMSFetchDribbbleData.m */,
 				F08FE2471787074900B6C555 /* DribbbleClient.storyboard */,
 				F08FE226178706C900B6C555 /* DribbbleClient.xcdatamodeld */,
 				F08FE215178706C900B6C555 /* Supporting Files */,
@@ -285,6 +291,7 @@
 				F08FE21F178706C900B6C555 /* FMSAppDelegate.m in Sources */,
 				F08FE228178706C900B6C555 /* DribbbleClient.xcdatamodeld in Sources */,
 				F08FE24B1787098600B6C555 /* FMSDribbbleCollectionViewViewController.m in Sources */,
+				F08FE24F17870DBC00B6C555 /* FMSFetchDribbbleData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,6 +301,7 @@
 			files = (
 				F08FE23E178706C900B6C555 /* DribbbleClientTests.m in Sources */,
 				F08FE24C1787098600B6C555 /* FMSDribbbleCollectionViewViewController.m in Sources */,
+				F08FE25017870DBC00B6C555 /* FMSFetchDribbbleData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
