@@ -17,7 +17,7 @@
 @property (nonatomic, retain) NSNumber * commentsCount;
 @property (nonatomic, retain) NSNumber * commentsReceivedCount;
 @property (nonatomic, retain) NSString * createdAt;
-@property (nonatomic, retain) NSString * draftedByPlayerId;
+@property (nonatomic, retain) NSNumber * draftedByPlayerId;
 @property (nonatomic, retain) NSNumber * drafteesCount;
 @property (nonatomic, retain) NSNumber * followersCount;
 @property (nonatomic, retain) NSNumber * followingCount;
