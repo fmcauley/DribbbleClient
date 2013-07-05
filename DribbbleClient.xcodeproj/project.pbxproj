@@ -24,7 +24,9 @@
 		F08FE233178706C900B6C555 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F08FE212178706C900B6C555 /* CoreData.framework */; };
 		F08FE23B178706C900B6C555 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F08FE239178706C900B6C555 /* InfoPlist.strings */; };
 		F08FE23E178706C900B6C555 /* DribbbleClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F08FE23D178706C900B6C555 /* DribbbleClientTests.m */; };
-		F08FE2481787074900B6C555 /* DribbleClient.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F08FE2471787074900B6C555 /* DribbleClient.storyboard */; };
+		F08FE2481787074900B6C555 /* DribbbleClient.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F08FE2471787074900B6C555 /* DribbbleClient.storyboard */; };
+		F08FE24B1787098600B6C555 /* FMSDribbbleCollectionViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F08FE24A1787098600B6C555 /* FMSDribbbleCollectionViewViewController.m */; };
+		F08FE24C1787098600B6C555 /* FMSDribbbleCollectionViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F08FE24A1787098600B6C555 /* FMSDribbbleCollectionViewViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,7 +61,9 @@
 		F08FE23A178706C900B6C555 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F08FE23C178706C900B6C555 /* DribbbleClientTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DribbbleClientTests.h; sourceTree = "<group>"; };
 		F08FE23D178706C900B6C555 /* DribbbleClientTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DribbbleClientTests.m; sourceTree = "<group>"; };
-		F08FE2471787074900B6C555 /* DribbleClient.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DribbleClient.storyboard; sourceTree = "<group>"; };
+		F08FE2471787074900B6C555 /* DribbbleClient.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DribbbleClient.storyboard; sourceTree = "<group>"; };
+		F08FE2491787098600B6C555 /* FMSDribbbleCollectionViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMSDribbbleCollectionViewViewController.h; sourceTree = "<group>"; };
+		F08FE24A1787098600B6C555 /* FMSDribbbleCollectionViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMSDribbbleCollectionViewViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,7 +128,9 @@
 			children = (
 				F08FE21D178706C900B6C555 /* FMSAppDelegate.h */,
 				F08FE21E178706C900B6C555 /* FMSAppDelegate.m */,
-				F08FE2471787074900B6C555 /* DribbleClient.storyboard */,
+				F08FE2491787098600B6C555 /* FMSDribbbleCollectionViewViewController.h */,
+				F08FE24A1787098600B6C555 /* FMSDribbbleCollectionViewViewController.m */,
+				F08FE2471787074900B6C555 /* DribbbleClient.storyboard */,
 				F08FE226178706C900B6C555 /* DribbbleClient.xcdatamodeld */,
 				F08FE215178706C900B6C555 /* Supporting Files */,
 			);
@@ -240,7 +246,7 @@
 				F08FE221178706C900B6C555 /* Default.png in Resources */,
 				F08FE223178706C900B6C555 /* Default@2x.png in Resources */,
 				F08FE225178706C900B6C555 /* Default-568h@2x.png in Resources */,
-				F08FE2481787074900B6C555 /* DribbleClient.storyboard in Resources */,
+				F08FE2481787074900B6C555 /* DribbbleClient.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,6 +284,7 @@
 				F08FE21B178706C900B6C555 /* main.m in Sources */,
 				F08FE21F178706C900B6C555 /* FMSAppDelegate.m in Sources */,
 				F08FE228178706C900B6C555 /* DribbbleClient.xcdatamodeld in Sources */,
+				F08FE24B1787098600B6C555 /* FMSDribbbleCollectionViewViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,6 +293,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F08FE23E178706C900B6C555 /* DribbbleClientTests.m in Sources */,
+				F08FE24C1787098600B6C555 /* FMSDribbbleCollectionViewViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
