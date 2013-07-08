@@ -13,32 +13,30 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="qom-Ed-Luk">
-                            <size key="itemSize" width="148" height="158"/>
+                            <size key="itemSize" width="200" height="150"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="KeR-Nj-vwM" customClass="FMSDribbbleImageCell">
-                                <rect key="frame" x="0.0" y="0.0" width="148" height="158"/>
+                                <rect key="frame" x="60" y="0.0" width="200" height="150"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="148" height="158"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="200" height="150"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lXW-0J-d4W">
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="165" id="WF9-dl-fgV"/>
-                                                <constraint firstAttribute="width" constant="157" id="Xrj-ay-2gT"/>
-                                            </constraints>
-                                        </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lXW-0J-d4W"/>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <constraints>
-                                    <constraint firstItem="lXW-0J-d4W" firstAttribute="top" secondItem="KeR-Nj-vwM" secondAttribute="top" type="default" id="Kg7-Wj-kMx"/>
-                                    <constraint firstItem="lXW-0J-d4W" firstAttribute="leading" secondItem="KeR-Nj-vwM" secondAttribute="leading" type="default" id="cio-bo-fBE"/>
+                                    <constraint firstItem="lXW-0J-d4W" firstAttribute="top" secondItem="KeR-Nj-vwM" secondAttribute="top" type="default" id="M07-ur-2rZ"/>
+                                    <constraint firstItem="lXW-0J-d4W" firstAttribute="trailing" secondItem="KeR-Nj-vwM" secondAttribute="trailing" type="default" id="gB4-D1-Qrw"/>
+                                    <constraint firstItem="lXW-0J-d4W" firstAttribute="bottom" secondItem="KeR-Nj-vwM" secondAttribute="bottom" type="default" id="lHV-Gf-kPp"/>
+                                    <constraint firstItem="lXW-0J-d4W" firstAttribute="leading" secondItem="KeR-Nj-vwM" secondAttribute="leading" type="default" id="vqy-ha-GDA"/>
                                 </constraints>
+                                <size key="customSize" width="200" height="150"/>
                                 <connections>
                                     <outlet property="dribbbleImage" destination="lXW-0J-d4W" id="YRd-Op-Ydq"/>
                                 </connections>
@@ -55,35 +53,6 @@
             <point key="canvasLocation" x="181" y="139"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="FMSDribbbleCollectionViewViewController" superclassName="UICollectionViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FMSDribbbleCollectionViewViewController.h"/>
-        </class>
-        <class className="FMSDribbbleImageCell" superclassName="UICollectionViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FMSDribbbleImageCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="dribbbleImage" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="UICollectionReusableView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionReusableView.h"/>
-        </class>
-        <class className="UICollectionViewCell" superclassName="UICollectionReusableView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewCell.h"/>
-        </class>
-        <class className="UICollectionViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewController.h"/>
-        </class>
-        <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
-        </class>
-        <class className="UICollectionViewLayout" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
