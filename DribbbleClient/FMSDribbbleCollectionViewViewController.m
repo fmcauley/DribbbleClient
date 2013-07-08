@@ -11,6 +11,7 @@
 #import "FMSFetchDribbbleData.h"
 #import "FMSDribbbleImageCell.h"
 #import "Shot.h"
+#import "FMSImageDetailsViewController.h"
 
 @interface FMSDribbbleCollectionViewViewController () <FMSFetchDribbbleData>
 
@@ -46,9 +47,6 @@
 }
 
 
-#pragma mark UICollectionViewController Delegate Methods
-
-
 #pragma mark UICollectionViewController DataSource Methods
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
@@ -73,6 +71,7 @@
     NSURL *imageURL = [NSURL URLWithString:info.imageTeaseUrl];
     
     NSString *key = info.imageTeaseUrl;
+    
     NSData *data = [self.imageCache objectForKey:key];
     
     if (data) {
@@ -117,6 +116,17 @@
     self.fetchedItems = [[NSArray alloc]initWithArray:mutableFetchResults];
     
     [self.collectionView reloadData];
+}
+
+#pragma mark Segue
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier]isEqualToString:@"imageDetail"]) {
+        NSIndexPath *indexPath = [self.collectionView indexPathForCell:sender];
+        FMSImageDetailsViewController *detail = (FMSImageDetailsViewController*)[segue destinationViewController];
+        detail.imageDetails = self.fetchedItems[indexPath.row];
+    }
 }
 
 @end
