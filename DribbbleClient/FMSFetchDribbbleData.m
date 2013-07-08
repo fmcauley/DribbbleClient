@@ -23,10 +23,10 @@
 
 @implementation FMSFetchDribbbleData
 
-+ (void)fetchDribbbleData
+- (void)fetchDribbbleData
 {
-    FMSFetchDribbbleData *local = [[self alloc]init];
-    [local fetchInitalDataFromDribbble];
+    
+    [self fetchInitalDataFromDribbble];
     
 }
 
@@ -69,11 +69,8 @@
         checkForDuplacate.predicate = [NSPredicate predicateWithFormat:@"shotId == %@", [shotDic[@"id"] stringValue]];
         Shot *shotsInDataBase = [[appDelegate.managedObjectContext executeFetchRequest:checkForDuplacate error:&error]lastObject];
         
-       if (shotsInDataBase)
+       if (!shotsInDataBase)
        {
-           NSLog(@"There are there already");
-       }
-       else { // put new data into the database
         newShot.shotId = [shotDic[@"id"] stringValue];
         newShot.title = shotDic[@"title"];
         newShot.height = shotDic[@"height"];
@@ -119,6 +116,8 @@
         [appDelegate saveContext];
        }
     }
+    
+    [self.delegate refreshContextData];
 }
 
 - (NSString*)validateStringDataFromJSON:(NSString*)jsonString

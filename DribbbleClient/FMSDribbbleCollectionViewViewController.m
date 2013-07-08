@@ -7,12 +7,18 @@
 //
 
 #import "FMSDribbbleCollectionViewViewController.h"
+#import "FMSAppDelegate.h"
 #import "FMSFetchDribbbleData.h"
 #import "FMSDribbbleImageCell.h"
+#import "Shot.h"
 
-@interface FMSDribbbleCollectionViewViewController ()
+@interface FMSDribbbleCollectionViewViewController () <FMSFetchDribbbleData>
 
 @property (nonatomic, strong) NSCache *imageCache;
+@property (nonatomic, strong) NSManagedObjectContext* managedObjectContext;
+@property (nonatomic, strong) NSArray *fetchedItems;
+@property (nonatomic, strong) FMSFetchDribbbleData *dribbleData;
+
 @end
 
 @implementation FMSDribbbleCollectionViewViewController
@@ -21,14 +27,24 @@
 {
     [super viewDidLoad];
     
-	[FMSFetchDribbbleData fetchDribbbleData];
+    self.imageCache = [[NSCache alloc]init];
+
+    self.dribbleData = [[FMSFetchDribbbleData alloc]init];
+    self.dribbleData.delegate = self;
+    [self.dribbleData fetchDribbbleData];
+   
+    FMSAppDelegate *appDelegate=(FMSAppDelegate *) [[UIApplication sharedApplication] delegate];
+    self.managedObjectContext = appDelegate.managedObjectContext;
+    
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     self.imageCache = nil;
+    self.fetchedItems = nil;
 }
+
 
 #pragma mark UICollectionViewController Delegate Methods
 
@@ -36,7 +52,7 @@
 #pragma mark UICollectionViewController DataSource Methods
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 100;
+    return [self.fetchedItems count];
 }
 
 
@@ -44,19 +60,63 @@
 {
     FMSDribbbleImageCell* newCell = [self.collectionView dequeueReusableCellWithReuseIdentifier:@"Cell"
                                                                            forIndexPath:indexPath];
-    //Configure the cell
-    NSURL *imageURL = [NSURL URLWithString:@"http://dribbble.s3.amazonaws.com/users/339875/screenshots/1144149/creativity_teaser.png"];
-    NSData *imageData = [NSData dataWithContentsOfURL:imageURL]; // Kick off on a background and the place holder
-    //also only load when the scrolling has stopped
-    
-    UIImage *image = [UIImage imageWithData:imageData];
-    
-    // Setup NSCache for the image url and index.row position
-   
-    
-    newCell.dribbbleImage.image = image;
+    [self configureCell:newCell atIndexPath:indexPath];
     
     return newCell;
+}
+
+
+- (void)configureCell:(FMSDribbbleImageCell *)cell atIndexPath:(NSIndexPath *)indexPath {
+
+    Shot *info = self.fetchedItems[indexPath.row];
+    
+    NSURL *imageURL = [NSURL URLWithString:info.imageTeaseUrl];
+    
+    NSString *key = info.imageTeaseUrl;
+    NSData *data = [self.imageCache objectForKey:key];
+    
+    if (data) {
+        UIImage *image = [UIImage imageWithData:data];
+        cell.dribbbleImage.image = image;
+    }
+    
+    else {cell.dribbbleImage.image = [UIImage imageNamed:@"placeholder1.jpg"];
+        dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul);
+        dispatch_async(queue, ^{
+            NSData *data = [NSData dataWithContentsOfURL:imageURL];
+            [self.imageCache setObject:data forKey:key];
+            UIImage *image = [UIImage imageWithData:data];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                cell.dribbbleImage.image = image;
+            });
+        });
+    }
+}
+
+#pragma mark FMSFetchDribbbleData
+
+- (void)refreshContextData
+{
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription
+                                   entityForName:@"Shot" inManagedObjectContext:self.managedObjectContext];
+    [fetchRequest setEntity:entity];
+    
+    NSSortDescriptor *sort = [[NSSortDescriptor alloc]
+                              initWithKey:@"createdAt" ascending:NO];
+    [fetchRequest setSortDescriptors:[NSArray arrayWithObject:sort]];
+    
+    [fetchRequest setFetchBatchSize:30];
+    
+    NSError *error = nil;
+    NSMutableArray *mutableFetchResults = [[self.managedObjectContext executeFetchRequest:fetchRequest error:&error] mutableCopy];
+    if (mutableFetchResults == nil) {
+        // Handle the error.
+    }
+    
+    self.fetchedItems = [[NSArray alloc]initWithArray:mutableFetchResults];
+    
+    [self.collectionView reloadData];
 }
 
 @end

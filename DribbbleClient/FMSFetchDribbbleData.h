@@ -8,8 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
+@protocol FMSFetchDribbbleData <NSObject>
+
+-(void)refreshContextData;
+
+@end
+
 @interface FMSFetchDribbbleData : NSObject
 
-+ (void)fetchDribbbleData;
+@property (nonatomic, assign) id <FMSFetchDribbbleData> delegate;
+
+- (void)fetchDribbbleData;
 
 @end
