@@ -7,26 +7,39 @@
 //
 
 #import "FMSImageDetailsViewController.h"
+#import "Shot.h"
+#import "Player.h"
 
 @interface FMSImageDetailsViewController ()
+@property (weak, nonatomic) IBOutlet UIImageView *detailImageView;
 
 @end
 
 @implementation FMSImageDetailsViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    
+    
+    // Load the image // TODO: DRY this up.
+    
+    NSURL *imageURL = [NSURL URLWithString:self.imageDetails.imageUrl];
+    
+   self.detailImageView.image = [UIImage imageNamed:@"placeholder1.jpg"];
+        dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul);
+        dispatch_async(queue, ^{
+            NSData *data = [NSData dataWithContentsOfURL:imageURL];
+            UIImage *image = [UIImage imageWithData:data];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                self.detailImageView.image = image;
+            });
+        });
+    
+
+    
+    
 }
 
 - (void)didReceiveMemoryWarning

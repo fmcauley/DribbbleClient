@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class Shot;
+
 @interface FMSImageDetailsViewController : UIViewController
+
+@property (nonatomic, strong) Shot *imageDetails;
 
 @end
