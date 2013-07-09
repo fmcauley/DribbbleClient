@@ -32,7 +32,7 @@
 
 - (void)fetchArtistDataFromDribbble:(NSString *)artistId
 {
-    NSString *urlArtist = [NSString stringWithFormat:@"http://api.dribbble.com/players/%@/shots", artistId];
+    NSString *urlArtist = [NSString stringWithFormat:@"http://api.dribbble.com/players/%@/shots?per_page=30", artistId];
     NSURL *artistURL = [NSURL URLWithString:urlArtist];
     
     dispatch_async(kDribbbleBGQueue, ^{
