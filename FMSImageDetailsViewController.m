@@ -9,9 +9,13 @@
 #import "FMSImageDetailsViewController.h"
 #import "Shot.h"
 #import "Player.h"
+#import "FMSArtistDetailViewController.h"
 
 @interface FMSImageDetailsViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *detailImageView;
+@property (weak, nonatomic) IBOutlet UILabel *artistName;
+
+
 
 @end
 
@@ -21,6 +25,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.title = self.imageDetails.title;
     
     
     // Load the image // TODO: DRY this up.
@@ -38,14 +44,27 @@
         });
     
 
-    
+    // add the artist name
+    self.artistName.text = self.imageDetails.player.name;
     
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
+
+
+#pragma mark Segue
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier]isEqualToString:@"artistDetail"]) {
+       
+        FMSArtistDetailViewController *detail = (FMSArtistDetailViewController*)[segue destinationViewController];
+        detail.artist = self.imageDetails;
+    }
+}
+
 
 @end
