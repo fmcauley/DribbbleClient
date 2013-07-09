@@ -14,6 +14,7 @@
 @interface FMSImageDetailsViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *detailImageView;
 @property (weak, nonatomic) IBOutlet UILabel *artistName;
+@property (weak, nonatomic) IBOutlet UILabel *imageTitle;
 
 
 
@@ -45,7 +46,8 @@
     
 
     // add the artist name
-    self.artistName.text = self.imageDetails.player.name;
+    self.artistName.text = [NSString stringWithFormat:@"Artist: %@",self.imageDetails.player.name];
+    self.imageTitle.text = [NSString stringWithFormat:@"Image Title: %@", self.imageDetails.title];
     
 }
 
