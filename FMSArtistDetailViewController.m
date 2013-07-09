@@ -61,11 +61,8 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     FMSDribbbleImageCell* newCell = [self.collectionView dequeueReusableCellWithReuseIdentifier:@"Cell"
-                                                                                   forIndexPath:indexPath];
+                                                                                forIndexPath:indexPath];
     [self configureCell:newCell atIndexPath:indexPath];
-    
-    newCell.artistImage.image = [UIImage imageNamed:@"placeholder1.jpg"];
-    
     return newCell;
 }
 
@@ -73,11 +70,8 @@
 - (void)configureCell:(FMSDribbbleImageCell *)cell atIndexPath:(NSIndexPath *)indexPath {
     
     Shot *info = self.fetchedItems[indexPath.row];
-    
-    NSURL *imageURL = [NSURL URLWithString:info.imageUrl];
-    
-    NSString *key = info.imageUrl;
-    
+    NSURL *imageURL = [NSURL URLWithString:info.imageTeaseUrl];
+    NSString *key = info.imageTeaseUrl;
     NSData *data = [self.imageArtistCache objectForKey:key];
     
     if (data) {
