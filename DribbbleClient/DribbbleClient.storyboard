@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
-        <!--Dribbble Collection View View Controller-->
+        <!--Dribbble Collection View View Controller - Dribbble Images-->
         <scene sceneID="rFz-dc-ecn">
             <objects>
                 <collectionViewController autoresizesArchivedViewToFullSize="NO" id="gbl-w6-cRU" customClass="FMSDribbbleCollectionViewViewController" sceneMemberID="viewController">
@@ -44,11 +44,66 @@
                             <outlet property="delegate" destination="gbl-w6-cRU" id="Tot-Uh-JHj"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="vG4-4F-wwr"/>
+                    <navigationItem key="navigationItem" title="Dribbble Images" id="vG4-4F-wwr"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QvB-oF-9fE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1233" y="139"/>
+        </scene>
+        <!--Artist Detail View Controller-->
+        <scene sceneID="I2L-56-udj">
+            <objects>
+                <viewController id="JUw-G6-ojc" customClass="FMSArtistDetailViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HYb-AJ-gV9">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="l9f-Nn-Fzi">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="308"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ikE-2N-T6a">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="qGX-o6-i4t" customClass="FMSDribbbleImageCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="b9R-7S-KWK">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <size key="customSize" width="50" height="50"/>
+                                        <connections>
+                                            <outlet property="artistImage" destination="b9R-7S-KWK" id="Uke-0t-uWl"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="JUw-G6-ojc" id="iGC-Ly-rwH"/>
+                                    <outlet property="delegate" destination="JUw-G6-ojc" id="wSB-nT-KdU"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="TOf-fj-lPi"/>
+                    <connections>
+                        <outlet property="collectionView" destination="l9f-Nn-Fzi" id="yXD-h6-u3h"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VEH-Ku-aQQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1402" y="907"/>
         </scene>
         <!--Image Details View Controller-->
         <scene sceneID="PLQ-Sa-DSR">
@@ -62,17 +117,36 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="238"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
+                            <label opaque="NO" clipsSubviews="YES" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="CKm-BX-dU6">
+                                <rect key="frame" x="26" y="257" width="274" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.99607843139999996" green="0.2156862745" blue="0.058823529409999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <gestureRecognizers/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="f7H-9Z-3EP" appends="YES" id="2Yv-9e-Fhn"/>
+                                </connections>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="fIn-Zp-PfB"/>
                     <connections>
+                        <outlet property="artistName" destination="CKm-BX-dU6" id="YgT-Ij-RnL"/>
                         <outlet property="detailImageView" destination="Prg-k7-h2o" id="ASV-38-8hn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F0R-kJ-Fgq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="f7H-9Z-3EP">
+                    <connections>
+                        <outlet property="delegate" destination="flx-KN-ZPr" id="VMO-Ed-sWo"/>
+                        <segue destination="JUw-G6-ojc" kind="push" identifier="artistDetail" id="bop-fb-h1E"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1666" y="139"/>
+            <point key="canvasLocation" x="1686" y="133"/>
         </scene>
         <!--Navigation Controller - Item-->
         <scene sceneID="Aq4-kI-hSL">
@@ -113,18 +187,26 @@
         </scene>
     </scenes>
     <classes>
+        <class className="FMSArtistDetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FMSArtistDetailViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="collectionView" candidateClass="UICollectionView"/>
+            </relationships>
+        </class>
         <class className="FMSDribbbleCollectionViewViewController" superclassName="UICollectionViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/FMSDribbbleCollectionViewViewController.h"/>
         </class>
         <class className="FMSDribbbleImageCell" superclassName="UICollectionViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/FMSDribbbleImageCell.h"/>
             <relationships>
+                <relationship kind="outlet" name="artistImage" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="dribbbleImage" candidateClass="UIImageView"/>
             </relationships>
         </class>
         <class className="FMSImageDetailsViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/FMSImageDetailsViewController.h"/>
             <relationships>
+                <relationship kind="outlet" name="artistName" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="detailImageView" candidateClass="UIImageView"/>
             </relationships>
         </class>
@@ -139,6 +221,9 @@
         </class>
         <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
+        </class>
+        <class className="UICollectionViewLayout" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

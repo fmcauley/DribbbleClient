@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		F01DDCFD178B4AAC00A9105A /* FMSImageDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F01DDCFC178B4AAC00A9105A /* FMSImageDetailsViewController.m */; };
 		F01DDCFE178B4AAC00A9105A /* FMSImageDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F01DDCFC178B4AAC00A9105A /* FMSImageDetailsViewController.m */; };
+		F01DDD01178B526500A9105A /* FMSArtistDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F01DDD00178B526500A9105A /* FMSArtistDetailViewController.m */; };
+		F01DDD02178B526500A9105A /* FMSArtistDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F01DDD00178B526500A9105A /* FMSArtistDetailViewController.m */; };
 		F042E2831787516000EC02D7 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = F042E2821787516000EC02D7 /* Player.m */; };
 		F042E2841787516000EC02D7 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = F042E2821787516000EC02D7 /* Player.m */; };
 		F042E2871787516D00EC02D7 /* Shot.m in Sources */ = {isa = PBXBuildFile; fileRef = F042E2861787516D00EC02D7 /* Shot.m */; };
@@ -53,6 +55,8 @@
 /* Begin PBXFileReference section */
 		F01DDCFB178B4AAC00A9105A /* FMSImageDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMSImageDetailsViewController.h; sourceTree = "<group>"; };
 		F01DDCFC178B4AAC00A9105A /* FMSImageDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMSImageDetailsViewController.m; sourceTree = "<group>"; };
+		F01DDCFF178B526500A9105A /* FMSArtistDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMSArtistDetailViewController.h; sourceTree = "<group>"; };
+		F01DDD00178B526500A9105A /* FMSArtistDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMSArtistDetailViewController.m; sourceTree = "<group>"; };
 		F042E2811787516000EC02D7 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Player.h; path = ../Player.h; sourceTree = "<group>"; };
 		F042E2821787516000EC02D7 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Player.m; path = ../Player.m; sourceTree = "<group>"; };
 		F042E2851787516D00EC02D7 /* Shot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shot.h; sourceTree = "<group>"; };
@@ -121,6 +125,8 @@
 				F08FE24A1787098600B6C555 /* FMSDribbbleCollectionViewViewController.m */,
 				F01DDCFB178B4AAC00A9105A /* FMSImageDetailsViewController.h */,
 				F01DDCFC178B4AAC00A9105A /* FMSImageDetailsViewController.m */,
+				F01DDCFF178B526500A9105A /* FMSArtistDetailViewController.h */,
+				F01DDD00178B526500A9105A /* FMSArtistDetailViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -349,6 +355,7 @@
 				F042E2831787516000EC02D7 /* Player.m in Sources */,
 				F042E2871787516D00EC02D7 /* Shot.m in Sources */,
 				F01DDCFD178B4AAC00A9105A /* FMSImageDetailsViewController.m in Sources */,
+				F01DDD01178B526500A9105A /* FMSArtistDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,6 +370,7 @@
 				F042E2841787516000EC02D7 /* Player.m in Sources */,
 				F042E2881787516D00EC02D7 /* Shot.m in Sources */,
 				F01DDCFE178B4AAC00A9105A /* FMSImageDetailsViewController.m in Sources */,
+				F01DDD02178B526500A9105A /* FMSArtistDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
