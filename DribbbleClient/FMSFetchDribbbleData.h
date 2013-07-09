@@ -20,4 +20,6 @@
 
 - (void)fetchDribbbleData;
 
+- (void)fetchArtistDataFromDribbble:(NSString*)artistId;
+
 @end

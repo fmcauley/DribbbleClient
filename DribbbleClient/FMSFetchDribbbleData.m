@@ -30,6 +30,20 @@
     
 }
 
+- (void)fetchArtistDataFromDribbble:(NSString *)artistId
+{
+    NSString *urlArtist = [NSString stringWithFormat:@"http://api.dribbble.com/players/%@/shots", artistId];
+    NSURL *artistURL = [NSURL URLWithString:urlArtist];
+    
+    dispatch_async(kDribbbleBGQueue, ^{
+        NSData* data = [NSData dataWithContentsOfURL:
+                        artistURL];
+        [self performSelectorOnMainThread:@selector(parseDribbbleData:)
+                               withObject:data waitUntilDone:YES];
+    });
+    
+}
+
 - (void)fetchInitalDataFromDribbble
 {
     dispatch_async(kDribbbleBGQueue, ^{
