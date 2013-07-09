@@ -11,5 +11,6 @@
 @interface FMSDribbbleImageCell : UICollectionViewCell
 
 @property(nonatomic, strong) IBOutlet UIImageView *dribbbleImage;
+@property(nonatomic, strong) IBOutlet UIImageView *artistImage;
 
 @end
