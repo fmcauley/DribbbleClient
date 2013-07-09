@@ -13,13 +13,16 @@
 #import "FMSFetchDribbbleData.h"
 #import "FMSDribbbleImageCell.h"
 
-@interface FMSArtistDetailViewController () <UICollectionViewDataSource, UICollectionViewDelegate,FMSFetchDribbbleData>
+@interface FMSArtistDetailViewController () <UICollectionViewDataSource, UICollectionViewDelegate,
+UITableViewDelegate,UITableViewDataSource, FMSFetchDribbbleData>
+
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
 @property (nonatomic, strong) NSCache *imageArtistCache;
 @property (nonatomic, strong) NSManagedObjectContext* managedObjectContext;
 @property (nonatomic, strong) NSArray *fetchedItems;
 @property (nonatomic, strong) FMSFetchDribbbleData *dribbleData;
+@property (weak, nonatomic) IBOutlet UITableView *tableVIew;
 
 @end
 
@@ -97,7 +100,7 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"I was selected");
+    // add the logic to save to disk
 }
 
 #pragma mark FMSFetchDribbbleData
@@ -108,8 +111,6 @@
     NSEntityDescription *entity = [NSEntityDescription
                                    entityForName:@"Shot" inManagedObjectContext:self.managedObjectContext];
     [fetchRequest setEntity:entity];
-    
-    // add the predicate for the player id
     
     NSSortDescriptor *sort = [[NSSortDescriptor alloc]
                               initWithKey:@"createdAt" ascending:NO];
@@ -122,12 +123,63 @@
     NSError *error = nil;
     NSMutableArray *mutableFetchResults = [[self.managedObjectContext executeFetchRequest:fetchRequest error:&error] mutableCopy];
     if (mutableFetchResults == nil) {
-        // Handle the error.
+        // TODD: Handle the error.
     }
     
     self.fetchedItems = [[NSArray alloc]initWithArray:mutableFetchResults];
     
     [self.collectionView reloadData];
+    [self.tableVIew reloadData];
 }
+
+#pragma mark UITableViewDataSource
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 6;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *MyIdentifier = @"Cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:MyIdentifier];
+    
+    Shot *artist = self.fetchedItems[0]; //index 0 because all artist data is the same.
+    
+    switch (indexPath.row) {
+        case 0:
+            cell.textLabel.text = artist.player.name;
+            cell.detailTextLabel.text = @"Artist Name";
+            break;
+        case 1:
+            cell.textLabel.text = artist.player.userName;
+            cell.detailTextLabel.text = @"Artist User Name";
+            break;
+        case 2:
+            cell.textLabel.text = artist.player.url;
+            cell.detailTextLabel.text = @"Artist URL";
+            break;
+        case 3:
+            cell.textLabel.text = artist.player.avatarUrl;
+            cell.detailTextLabel.text = @"Artist Avatar URL";
+            break;
+        case 4:
+            cell.textLabel.text = artist.player.location;
+            cell.detailTextLabel.text = @"Artist Location";
+            break;
+        default:
+            cell.textLabel.text = artist.player.twitterScreenName;
+            cell.detailTextLabel.text = @"Artist Twitter Handle";
+            break;
+    }
+    
+    
+    
+    return cell;
+}
+
+
+
+#pragma mark UITableViewDelegate
 
 @end
