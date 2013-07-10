@@ -23,31 +23,34 @@
 @implementation FMSImageDetailsViewController
 
 
+- (void)loadDetailImage
+{
+    NSURL *imageURL = [NSURL URLWithString:self.imageDetails.imageUrl];
+    
+    self.detailImageView.image = [UIImage imageNamed:@"placeholder1.jpg"];
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul);
+    dispatch_async(queue, ^{
+        NSData *data = [NSData dataWithContentsOfURL:imageURL];
+        UIImage *image = [UIImage imageWithData:data];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.detailImageView.image = image;
+        });
+    });
+}
+
+- (void)setNameAndTitle
+{
+    self.title = self.imageDetails.title;
+    self.artistName.text = [NSString stringWithFormat:@"Artist: %@",self.imageDetails.player.name];
+    self.imageTitle.text = [NSString stringWithFormat:@"Image Title: %@", self.imageDetails.title];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self setNameAndTitle];
+    [self loadDetailImage];
     
-    self.title = self.imageDetails.title;
-    
-    
-    // Load the image // TODO: DRY this up.
-    
-    NSURL *imageURL = [NSURL URLWithString:self.imageDetails.imageUrl];
-    
-   self.detailImageView.image = [UIImage imageNamed:@"placeholder1.jpg"];
-        dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul);
-        dispatch_async(queue, ^{
-            NSData *data = [NSData dataWithContentsOfURL:imageURL];
-            UIImage *image = [UIImage imageWithData:data];
-            dispatch_async(dispatch_get_main_queue(), ^{
-                self.detailImageView.image = image;
-            });
-        });
-    
-
-    // add the artist name
-    self.artistName.text = [NSString stringWithFormat:@"Artist: %@",self.imageDetails.player.name];
-    self.imageTitle.text = [NSString stringWithFormat:@"Image Title: %@", self.imageDetails.title];
     
 }
 
